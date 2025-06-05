@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ----- VARIABLES ----- */
-/* ----- VARIABLES ----- */
-/* ----- VARIABLES ----- */
 :root {  
     /* Background & Base */  
     --body-color: #fafafa;       /* White background */  
@@ -22,6 +20,7 @@
     /* Shadows */  
     --first-shadow-color: rgba(0, 0, 0, 0.05);   
 }
+
 /* ----- BASE ----- */
 *{
     margin: 0;
@@ -51,8 +50,6 @@ html{
     background: #bbb;
 }
 
-
-
 /* ----- GLOBAL BUTTON DESIGN (FIXED) ----- */
 .btn {
     font-weight: 500;
@@ -78,14 +75,16 @@ html{
 .btn > i {
     margin-left: 10px;
 }
+
 .featured-text-card {
     background:#252525;
     color: var(--color-white);
-  height: 3%;
+    height: 3%;
     font-size: 12px;
     border-radius: 5px;
     width: 20%;
 }
+
 /* SPECIFIC BUTTON STYLES */
 .featured-text-btn > .blue-btn {
     background: var(--first-color);
@@ -186,7 +185,6 @@ nav{
     border-radius: 50%;
 }
 
-
 /* ----- WRAPPER DESIGN ----- */
 .wrapper{
     padding-inline: 10vw;
@@ -248,7 +246,6 @@ nav{
     display: flex;
     margin-top: 5em;
     gap: 30px;
-    
 }
 
 .icon{
@@ -278,9 +275,8 @@ nav{
     margin: auto 0;
     width: 380px;
     height: 380px;
- border-radius: 50%;
+    border-radius: 50%;
     overflow: hidden;
-   
 }
 .image img{
     width: 380px;
@@ -419,7 +415,7 @@ h3{
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
- text-align: center;
+    text-align: center;
 }
 .project-box>i{
     font-size: 50px;
@@ -434,7 +430,6 @@ h3{
     content: "";
     position: absolute;
     bottom: -100%;
-
     width: 100%;
     height: 100%;
     transition: .4s;
@@ -464,7 +459,7 @@ h3{
     padding: 20px 30px;
     width: 100%;
     height: 315px;
-    background: var(--second-color);
+    background: var(--first-color);
     border-radius: 10px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
@@ -489,7 +484,7 @@ h3{
 .contact-info:hover.contact-info h2,
 .contact-info:hover.contact-info p,
 .contact-info:hover.contact-info i{
-    color: #777;
+    color: var(--text-color-second);
     z-index: 2;
 }
 
@@ -538,17 +533,80 @@ textarea{
     font-size: 18px;
     rotate: -45deg;
 }
-.contact-info {
-    background: var(--first-color); /* Deep pink */
+
+/* ----- CERTIFICATES BOX ----- */
+.certificate-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-.contact-info::after {
-    background: var(--color-white); /* White fill on hover */
+.certificate-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 280px;
+    background: var(--color-white);
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+    overflow: hidden;
+    text-align: center;
+    padding: 30px 20px;
 }
-.contact-info:hover.contact-info h2,
-.contact-info:hover.contact-info p,
-.contact-info:hover.contact-info i {
-    color: var(--text-color-second); /* Charcoal text on hover */
+.certificate-box h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color-second);
+    margin-bottom: 15px;
 }
+.certificate-box p{
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+.certificate-box .btn{
+    background: var(--first-color);
+    color: var(--color-white);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+.certificate-box .btn:hover{
+    background: var(--first-color-hover);
+    color: var(--color-white);
+}
+.certificate-box::after{
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    background: var(--first-color);
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    z-index: 1;
+}
+.certificate-box:hover.certificate-box::after{
+    bottom: 0;
+}
+.certificate-box:hover.certificate-box h3,
+.certificate-box:hover.certificate-box p,
+.certificate-box:hover.certificate-box .btn{
+    color: var(--color-white);
+    z-index: 2;
+    position: relative;
+}
+.certificate-box:hover.certificate-box .btn{
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--color-white);
+}
+
 /* ----- FOOTER BOX ----- */
 footer{
     display: flex;
@@ -556,7 +614,7 @@ footer{
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: #fafafa;
+    background: #dadada;
     padding-block: 40px 60px;
 }
 .top-footer p{
@@ -578,13 +636,11 @@ footer{
 .footer-social-icons{
     display: flex;
     gap: 30px;   
-  
 }
 .bottom-footer{
     font-size: 14px;
     margin-top: 10px;
 }
-
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px){
@@ -594,6 +650,15 @@ footer{
     .image, .image img{
         width: 320px;
         height: 320px;
+    }
+    
+    /* Skills section responsive */
+    .skills-box{
+        margin: 10px 0;
+    }
+    .skills-list span{
+        font-size: 13px;
+        padding: 3px 8px;
     }
 }
 
@@ -673,11 +738,65 @@ footer{
     .project-box{
         width: 80%;
     }
-
+    
+    /* Skills section responsive for tablets */
+    .skills-box{
+        margin: 15px 0;
+        text-align: center;
+    }
+    .skills-list{
+        justify-content: center;
+        gap: 8px;
+    }
+    .skills-list span{
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+    
+    /* Certificates responsive */
+    .certificate-container{
+        justify-content: center;
+    }
+    .certificate-box{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    /* Contact section responsive */
+    .contact-info{
+        height: auto;
+        min-height: 250px;
+        padding: 30px 20px;
+    }
+    .contact-info h2{
+        font-size: 20px;
+        text-align: center;
+    }
+    .contact-info p{
+        font-size: 14px;
+        text-align: center;
+        margin-block: 8px;
+    }
+    
+    /* Footer responsive */
+    .footer-menu{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .footer_menu_list a{
+        margin-inline: 15px;
+        font-size: 14px;
+    }
+    .footer-social-icons{
+        gap: 20px;
+    }
+    .top-footer p{
+        font-size: 22px;
+    }
 }
 
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
-
 @media only screen and (max-width: 540px){
     .featured-name{
         font-size: 40px;
@@ -692,115 +811,171 @@ footer{
         width: 100%;
     }
     .featured-text-card {
-    background:#252525;
-    color: var(--color-white);
-  height: 5%;
-    font-size: 12px;
-    border-radius: 5px;
-  
-     width: 30%;
-  margin: 0 auto;
-}
-.scroll-icon-box{
-    display: none;
-}
-
-}
-/* ----- CERTIFICATES BOX ----- */
-.certificate-container{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.certificate-box{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 30%;
-    height: 280px;
-    background: var(--color-white);
-    border-radius: 20px;
-    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
-    overflow: hidden;
-    text-align: center;
-    padding: 30px 20px;
-}
-.certificate-box h3{
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text-color-second);
-    margin-bottom: 15px;
-}
-.certificate-box p{
-    font-size: 15px;
-    color: #777;
-    margin-bottom: 25px;
-    line-height: 1.5;
-}
-.certificate-box .btn{
-    background: var(--first-color);
-    color: var(--color-white);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-}
-.certificate-box .btn:hover{
-    background: var(--first-color-hover);
-    color: var(--color-white);
-}
-.certificate-box::after{
-    content: "";
-    position: absolute;
-    bottom: -100%;
-    background: var(--second-color);
-    width: 100%;
-    height: 100%;
-    transition: .4s;
-    z-index: 1;
-}
-.certificate-box:hover.certificate-box::after{
-    bottom: 0;
-}
-.certificate-box:hover.certificate-box h3,
-.certificate-box:hover.certificate-box p,
-.certificate-box:hover.certificate-box .btn{
-    color: var(--color-white);
-    z-index: 2;
-    position: relative;
-}
-.certificate-box:hover.certificate-box .btn{
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid var(--color-white);
-}
-/* ----- CERTIFICATES BOX ----- */
-.certificate-box .btn {
-    background: var(--first-color); /* Deep pink */
-}
-.certificate-box .btn:hover {
-    background: var(--color-white); /* Darker pink */
-}
-.certificate-box::after {
-    background: var(--first-color); /* Deep pink fill on hover */
-}
-/* ----- RESPONSIVE FOR CERTIFICATES ----- */
-@media only screen and (max-width: 900px) {
-    .certificate-container{
+        background:#252525;
+        color: var(--color-white);
+        height: 5%;
+        font-size: 12px;
+        border-radius: 5px;
+        width: 30%;
+        margin: 0 auto;
+    }
+    .scroll-icon-box{
+        display: none;
+    }
+    
+    /* Skills section mobile responsive */
+    .skills-box{
+        margin: 10px 0;
+        padding: 0 10px;
+    }
+    .skills-header h3{
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .skills-list{
         justify-content: center;
+        gap: 6px;
+        flex-wrap: wrap;
     }
-    .certificate-box{
-        width: 80%;
+    .skills-list span{
+        font-size: 11px;
+        padding: 3px 8px;
+        margin: 2px;
     }
-}
-
-@media only screen and (max-width: 540px){
+    
+    /* Certificates mobile responsive */
     .certificate-box{
         width: 100%;
-        height: 250px;
+        height: auto;
+        min-height: 220px;
+        padding: 20px 15px;
+        margin-bottom: 15px;
+    }
+    .certificate-box h3{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .certificate-box p{
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .certificate-box .btn{
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    /* Contact section mobile responsive */
+    .contact-info{
+        height: auto;
+        min-height: 200px;
+        padding: 20px 15px;
+        text-align: center;
+    }
+    .contact-info h2{
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .contact-info p{
+        font-size: 13px;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+        margin-block: 10px;
+    }
+    .contact-info p i{
+        font-size: 16px;
+    }
+    
+    /* Form responsive */
+    textarea{
+        height: 150px;
+        padding: 10px 15px;
+    }
+    .form-button .btn{
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    /* Footer mobile responsive */
+    .footer-menu{
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .footer_menu_list{
+        margin: 5px 0;
+    }
+    .footer_menu_list a{
+        margin-inline: 0;
+        font-size: 13px;
+        display: block;
+        padding: 5px 0;
+    }
+    .footer-social-icons{
+        gap: 15px;
+        justify-content: center;
+    }
+    .footer-social-icons .icon{
+        width: 35px;
+        height: 35px;
+    }
+    .top-footer p{
+        font-size: 20px;
+        text-align: center;
+    }
+    .bottom-footer{
+        font-size: 12px;
+        text-align: center;
+        padding: 0 20px;
+    }
+    .bottom-footer p{
+        line-height: 1.4;
+    }
+    
+    /* Section padding adjustments */
+    .section{
+        padding-block: 3em;
+    }
+    .top-header{
+        margin-bottom: 3em;
+    }
+    .top-header h1{
+        font-size: 28px;
+    }
+    .top-header span{
+        font-size: 14px;
+    }
+}
+
+/* ----- EXTRA SMALL DEVICES (320px and below) ----- */
+@media only screen and (max-width: 320px){
+    .wrapper{
+        padding-inline: 5vw;
+    }
+    
+    .skills-list span{
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+    
+    .certificate-box{
+        padding: 15px 10px;
+    }
+    
+    .contact-info{
+        padding: 15px 10px;
+    }
+    
+    .footer_menu_list a{
+        font-size: 12px;
+    }
+    
+    .top-footer p{
+        font-size: 18px;
+    }
+    
+    .bottom-footer{
+        font-size: 11px;
     }
 }
