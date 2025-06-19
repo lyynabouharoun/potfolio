@@ -118,7 +118,7 @@
 
 document.getElementById('downloadBtn').addEventListener('click', function() {
   const link = document.createElement('a');
-  link.href = 'docs/White and Black Tech Professional Resume (1).pdf';  // chemin vers ton PDF
+  link.href = 'docs/MyCV.pdf';  // chemin vers ton PDF
   link.download = 'Lyna_CV.pdf';  // nom du fichier téléchargé
   document.body.appendChild(link);
   link.click();
